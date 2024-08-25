@@ -244,7 +244,7 @@
     <!-- END Video -->
     <!-- =============== END Portfolio =============== -->
 
-    <!-- =============== About Ws =============== -->
+    <!-- =============== About =============== -->
     <div class="about">
         <div class="section-heading">
             <h2>About Us</h2>
@@ -253,22 +253,77 @@
                 blandit aliquet elit, eget tincidunt.
             </p>
         </div>
-        <img src="images/about.png" alt="About">
+        <img src="images/about.png" class="about-devices" alt="About">
         <div class="about-container">
             <div class="container">
-                <div class="sec">
-                    <i class="fa-solid fa-display"></i> Responsive design
-                    <p>1000</p>
-                    <span>Coffe drinks</span>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fas fa-mug-hot stat-icon"></i>
+                        <div class="stat-number" data-target="1236">0</div>
+                        <div class="stat-label">Coffee Drinks</div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-folder stat-icon"></i>
+                        <div class="stat-number" data-target="256">0</div>
+                        <div class="stat-label">Completed Projects</div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-envelope stat-icon"></i>
+                        <div class="stat-number" data-target="1743">0</div>
+                        <div class="stat-label">Mails Sent</div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-trophy stat-icon"></i>
+                        <div class="stat-number" data-target="37">0</div>
+                        <div class="stat-label">Awards Received</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- =============== END About Ws =============== -->
+
+    <!-- =============== END About =============== -->
+
+    <!-- Testimonials and Skills -->
+    <div class="test-skill-heading">
+        <div class="section-heading">
+            <h2>Testimonials</h2>
+            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
+                tincidunt nibh pulvinar a. Curabitur aliquet qLuam. Accumsan id imperdiet et, porttitor at sem. Mauris
+                blandit aliquet elit, eget tincidunt.
+            </p>
+            <div class="review">
+                <div class="review-box">
+                    <img src="images/user-1.jpg" alt="User">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac libero et turpis convallis
+                        consequat. Sed euismod arcu vel est consectetur, et tempus metus consectetur. Donec vitae
+                        velit vel mauris volutpat pulvinar.</p>
+                    <h3>John Doe</h3>
+                    <p>CEO, Company</p>
+                </div>
+                <div class="review-box">
+                    <img src="images/user-2.jpg" alt="User">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac libero et turpis convallis
+                        consequat. Sed euismod arcu vel est consectetur, et tempus metus consectetur. Donec vitae
+                        velit vel mauris volutpat pulvinar.</p>
+                    <h3>Jane Doe</h3>
+                    <p>CEO, Company</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="section-heading">
+            <h2>Skills</h2>
+            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
+                tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem.
+                Mauris
+                blandit aliquet elit, eget tincidunt.
+            </p>
+        </div>
+    </div>
 
 
-
-
+    <!-- END Testimonials and Skills -->
 
 
 
@@ -278,11 +333,37 @@
 
 
     <!-- =============== JS =============== -->
+
     <!-- Automatically update current year in footer -->
     <script>
         let year = new Date();
         let currentYear = year.getFullYear();
         document.getElementById("current-year").innerHTML = currentYear;
+    </script>
+
+    <script>
+        // Count-Up Animation
+        const counters = document.querySelectorAll(".stat-number");
+        counters.forEach((counter) => {
+            counter.innerText = "0";
+
+            const updateCounter = () => {
+                const target = +counter.getAttribute("data-target");
+                const current = +counter.innerText;
+
+                const increment = target / 200;
+
+                if (current < target) {
+                    counter.innerText = `${Math.ceil(current + increment)}`;
+                    setTimeout(updateCounter, 10);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            updateCounter();
+        });
+
     </script>
 
 </body>

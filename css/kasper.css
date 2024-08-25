@@ -181,7 +181,10 @@ nav .container ul .search-icon {
   border-left: 1px solid #f2f2f2;
   position: relative;
   margin-left: 30px;
+  cursor: pointer;
+  position: relative;
 }
+
 nav .container ul .search-icon i {
   color: white;
   position: absolute;
@@ -222,7 +225,8 @@ nav .container ul .search-icon i {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(0 0 0 / 60%);
+  background-color: rgb(0 0 0 / 20%);
+  z-index: -10;
 }
 /* END Header */
 
@@ -427,3 +431,91 @@ video {
 /* END Video */
 
 /* END Portfolio */
+
+/* About */
+.about-devices-container {
+  position: relative;
+  text-align: center;
+}
+.about-devices {
+  display: block;
+  max-width: 100%;
+  position: relative;
+  top: 120px;
+  z-index: -1;
+  margin: 0 auto;
+}
+.about-container {
+  background-image: url("../images/stats.png");
+  padding: 50px;
+}
+.about-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 70%);
+}
+
+.stats-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: var(--opacity-color);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.stat-box {
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease-in-out;
+  color: white;
+  margin-bottom: 20px 0;
+}
+
+.stat-box:hover {
+  transform: scale(1.05);
+}
+
+.stat-icon {
+  font-size: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.stat-number {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stat-label {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* END About */
+
+/* Testimonials and Skills  */
+.test-skill-heading {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.test-skill-heading .section-heading {
+  width: 50%;
+}
+/* END Testimonials and Skills  */
