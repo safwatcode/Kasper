@@ -135,6 +135,15 @@ header {
   background-color: #1f2021;
   position: relative;
 }
+header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 70%);
+}
 nav .container {
   display: flex;
   justify-content: space-between;
@@ -219,7 +228,7 @@ nav .container ul .search-icon i {
 .landing .landing-text p {
   line-height: 1.5;
 }
-.overlay {
+/* .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -227,7 +236,7 @@ nav .container ul .search-icon i {
   height: 100%;
   background-color: rgb(0 0 0 / 20%);
   z-index: -10;
-}
+} */
 /* END Header */
 
 /* Services */
@@ -268,6 +277,15 @@ nav .container ul .search-icon i {
   background-size: cover;
   position: relative;
   overflow: hidden;
+}
+.design::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 70%);
 }
 .design-image {
   text-align: center;
@@ -445,11 +463,13 @@ video {
   z-index: -1;
   margin: 0 auto;
 }
+
 .about-container {
   background-image: url("../images/stats.png");
-  padding: 50px;
+  padding: 100px;
+  position: relative;
 }
-.about-container::after {
+.about-container::before {
   content: "";
   position: absolute;
   left: 0;
@@ -469,6 +489,7 @@ video {
   gap: 20px;
   background-color: var(--opacity-color);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 .stat-box {
@@ -478,11 +499,6 @@ video {
   color: white;
   margin-bottom: 20px 0;
 }
-
-.stat-box:hover {
-  transform: scale(1.05);
-}
-
 .stat-icon {
   font-size: 20px;
   margin-bottom: 15px;
@@ -499,7 +515,6 @@ video {
   font-weight: bold;
   margin: 0;
 }
-
 .stat-label {
   font-size: 20px;
   margin-top: 10px;
@@ -508,14 +523,60 @@ video {
 /* END About */
 
 /* Testimonials and Skills  */
-.test-skill-heading {
+.test-skill {
   width: 100%;
-  text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--section-padding) 0;
 }
-.test-skill-heading .section-heading {
+.test-skill .test,
+.test-skill .skills {
   width: 50%;
+}
+.testimonial-item {
+  margin-bottom: 50px;
+  padding: 0 50px;
+}
+.testimonial-body {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.testimonial-text {
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  margin-left: 20px;
+  line-height: 30px;
+}
+.testimonial-text {
+  text-align: right;
+}
+.testimonial-text > p {
+  text-align: left;
+}
+.testimonial-text span {
+  color: #777777;
+}
+.test-skill img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.bullets {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+.bullets li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid var(--main-color);
+  display: inline-block;
+}
+.bullets li.active {
+  background-color: var(--main-color);
 }
 /* END Testimonials and Skills  */
