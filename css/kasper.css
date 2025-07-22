@@ -418,7 +418,7 @@ nav .container ul .search-icon i {
   width: 100%;
   position: relative;
 }
-video {
+.video-container video {
   width: 100%;
 }
 .video-overlay {
@@ -436,14 +436,19 @@ video {
   margin-bottom: 30px;
   font-weight: normal;
 }
-.video-overlay button {
+/* .video-overlay button {
   background-color: black;
   padding: 15px;
   border: none;
   cursor: pointer;
-}
-.video-overlay button a {
+} */
+.video-overlay a {
+  margin: 30px auto;
+  padding: 15px 20px;
+  width: fit-content;
+  background-color: black;
   color: white;
+  border: none;
   cursor: pointer;
 }
 /* END Video */
