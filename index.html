@@ -9,11 +9,11 @@
     <link rel="icon" type="image/png" href="images/title-logo.svg" />
     <!-- Render All Elements Normally -->
     <link rel="stylesheet" href="css/Normalize.css">
-    <!-- Main CSS File -->
-    <link rel="stylesheet" href="css/kasper.css">
     <!-- Font Awesome Library -->
     <link rel="stylesheet" href="css/all.min.css">
-    <!-- Open Sans Font -->
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="css/kasper.css">
+    <!-- Google Open Sans Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -24,9 +24,12 @@
 
     <!-- =============== Header =============== -->
     <header>
-        <nav>
-            <div class="container">
-                <img src="images/logo.png" alt="kasper logo">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img decoding="async" src="images/logo.png" alt="Kasper Logo">
+            </a>
+            <nav>
+                <i class="fas fa-bars toggle-menu"></i>
                 <ul>
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#services">Services</a></li>
@@ -34,16 +37,23 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <div class="search-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
                 </ul>
-            </div>
-        </nav>
+                <div class="search-icon form">
+                    <i class="fas fa-search"></i>
+                </div>
+            </nav>
+        </div>
 
-        <!-- landing -->
-        <div class="landing">
-            <div class="landing-text">
+    </header>
+    <!-- =============== END Header =============== -->
+
+    <!-- =============== Start Landing =============== -->
+    <div class="landing">
+        <!-- Overlay -->
+        <div class="overlay"></div>
+        <!-- END Overlay -->
+        <div class="landing-container">
+            <div class="landing-content">
                 <h2>Hello World!
                     <br>
                     We Are Kasper, We Make Art.
@@ -57,17 +67,18 @@
                 </p>
             </div>
         </div>
-        <!-- ENd landing -->
-
-        <!-- Overlay -->
-        <!-- <div class="overlay"></div> -->
-        <!-- END Overlay -->
-
-    </header>
-    <!-- =============== END Header =============== -->
+        <i class="fas fa-angle-left fa-2x change-background"></i>
+        <i class="fas fa-angle-right fa-2x change-background"></i>
+        <ul class="bullets">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- =============== END Landing =============== -->
 
     <!-- ===============  Services =============== -->
-    <div class="services">
+    <!-- <div class="services">
         <div class="section-heading">
             <h2>Services</h2>
             <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
@@ -113,11 +124,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- =============== END Services =============== -->
 
     <!-- =============== Design =============== -->
-    <div class="design">
+    <!-- <div class="design">
 
         <div class="design-image">
             <img src="images/mobile.png" alt="Mobile Phone">
@@ -141,11 +152,11 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- =============== END Design =============== -->
 
     <!-- =============== Portfolio =============== -->
-    <div class="portfolio">
+    <!-- <div class="portfolio">
         <div class="section-heading">
             <h2>Portfolio</h2>
             <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
@@ -223,10 +234,10 @@
         <div class="btn-div">
             <a href="index.html" class="gallary-btn">More</a>
         </div>
-    </div>
+    </div> -->
 
     <!-- Video -->
-    <div class="video-container">
+    <!-- <div class="video-container">
         <video autoplay muted loop>
             <source src="images/awesome-video.mp4" type="video/mp4">
         </video>
@@ -237,13 +248,13 @@
                 <a href="index.html">See more</a>
             </button>
         </div>
-    </div>
+    </div> -->
 
     <!-- END Video -->
     <!-- =============== END Portfolio =============== -->
 
     <!-- =============== About =============== -->
-    <div class="about">
+    <!-- <div class="about">
         <div class="section-heading">
             <h2>About Us</h2>
             <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
@@ -278,12 +289,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- =============== END About =============== -->
 
-    <!-- Testimonials and Skills -->
-    <div class="test-skill">
+    <!-- =============== Testimonials and Skills =============== -->
+    <!-- <div class="test-skill">
         <div class="test">
             <div class="section-heading">
                 <h2>Testimonials</h2>
@@ -337,10 +348,8 @@
                 </p>
             </div>
         </div>
-    </div>
-
-
-    <!-- END Testimonials and Skills -->
+    </div> -->
+    <!-- =============== END Testimonials and Skills =============== -->
 
 
 
@@ -350,39 +359,7 @@
 
 
     <!-- =============== JS =============== -->
-
-    <!-- Automatically update current year in footer -->
-    <script>
-        let year = new Date();
-        let currentYear = year.getFullYear();
-        document.getElementById("current-year").innerHTML = currentYear;
-    </script>
-
-    <script>
-        // Count-Up Animation
-        const counters = document.querySelectorAll(".stat-number");
-        counters.forEach((counter) => {
-            counter.innerText = "0";
-
-            const updateCounter = () => {
-                const target = +counter.getAttribute("data-target");
-                const current = +counter.innerText;
-
-                const increment = target / 200;
-
-                if (current < target) {
-                    counter.innerText = `${Math.ceil(current + increment)}`;
-                    setTimeout(updateCounter, 10);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-
-            updateCounter();
-        });
-
-    </script>
-
+    <script src="kasper.js"></script>
 </body>
 
 </html>
