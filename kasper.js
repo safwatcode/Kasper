@@ -1,12 +1,5 @@
 // Slider
 
-
-// Initialize first slide
-showSlide(0);
-
-// Optional: Auto-slide every 5 seconds
-// setInterval(() => rightArrow.click(), 5000);
-
 // Automatically update current year in footer
 let year = new Date();
 let currentYear = year.getFullYear();
