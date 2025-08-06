@@ -37,6 +37,9 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+a:visited {
+  color: rgb(255, 0, 0);
+}
 /* Small Screens */
 /* @media (min-width: 480px) {
   .container {
@@ -131,9 +134,10 @@ a {
 /* Header */
 header {
   width: 100%;
-  position: absolute;
+  position: fixed;
   left: 0;
   z-index: 2;
+  background-color: black;
 }
 header .container {
   display: flex;
@@ -628,6 +632,7 @@ header .container nav .search-icon i:hover {
   color: white;
   border: none;
   text-transform: uppercase;
+  cursor: pointer;
 }
 /* END Video */
 
@@ -869,3 +874,92 @@ header .container nav .search-icon i:hover {
   display: block;
 }
 /* END Quote */
+
+/* Pricing */
+.pricing .plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+@media (max-width: 1199px) {
+  .pricing .plans {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .pricing .plans {
+    grid-template-columns: 1fr;
+  }
+}
+.pricing .plans .plan {
+  background-color: #fcfcfc;
+  text-align: center;
+}
+.pricing .plans .plan .head {
+  padding: 40px 20px;
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+.pricing .plans .plan .head h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.pricing .plans .plan .head span {
+  font-size: 60px;
+  font-weight: bold;
+}
+.pricing .plans .plan .head span::before {
+  content: "$";
+  position: relative;
+  font-size: 30px;
+  top: -40px;
+  margin-right: 15px;
+  font-weight: normal;
+}
+.pricing .plans .plan .head span::after {
+  content: "/MO";
+  position: relative;
+  font-size: 30px;
+  right: -10px;
+}
+.pricing .plans .plan ul {
+  border-bottom: 1px solid var(--main-color);
+}
+.pricing .plans .plan ul li {
+  padding: 20px 0;
+  position: relative;
+}
+.pricing .plans .plan ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 1px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+}
+.pricing .plans .plan .foot {
+  margin: 40px 0;
+}
+.pricing .plans .plan .foot a {
+  width: fit-content;
+  border: 1px solid var(--main-color);
+  padding: 15px 30px;
+  margin: 0 auto;
+}
+.pricing .contact-text {
+  text-align: center;
+  font-size: 25px;
+  margin: 40px 0;
+}
+.pricing .contact-link {
+  background-color: var(--main-color);
+  color: white;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 15px 30px;
+  font-size: 20px;
+}
+/* END Pricing */
