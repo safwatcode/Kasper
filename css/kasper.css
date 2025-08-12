@@ -6,7 +6,6 @@
   --transition-duration-4ms: 0.4s;
   --transition-duration-6ms: 0.6s;
 }
-
 /* END Variables */
 
 /* Global Rules */
@@ -36,9 +35,6 @@ a {
   display: block;
   text-decoration: none;
   cursor: pointer;
-}
-a:visited {
-  color: rgb(255, 0, 0);
 }
 /* Small Screens */
 /* @media (min-width: 480px) {
@@ -686,6 +682,9 @@ header .container nav .search-icon i:hover {
   background-color: var(--opacity-color);
 }
 @media (max-width: 767px) {
+  .stats {
+    padding: 50px;
+  }
   .stats .container .stat-box {
     flex-basis: 100%;
     margin-bottom: 20px;
@@ -963,3 +962,82 @@ header .container nav .search-icon i:hover {
   font-size: 20px;
 }
 /* END Pricing */
+
+/* Subscribe */
+.subscribe {
+  background-image: url("../images/subscribe.jpg");
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+.subscribe::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 50%);
+}
+.subscribe .container {
+  position: relative;
+  display: flex;
+  align-content: center;
+}
+@media (max-width: 991px) {
+  .subscribe .container {
+    flex-direction: column;
+  }
+}
+.subscribe .container form {
+  display: flex;
+  position: relative;
+  width: 670px;
+  max-width: 100%;
+}
+.subscribe .container form ::placeholder {
+  color: white;
+  text-transform: uppercase;
+}
+.subscribe .container form label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.subscribe .container form input[type="email"] {
+  border: 1px solid white;
+  border-right: none;
+  background: none;
+  color: white;
+  padding: 20px 20px 20px 60px;
+  caret-color: var(--main-color);
+  width: calc(100% - 130px);
+}
+.subscribe .container form input[type="submit"] {
+  width: 130px;
+  background-color: var(--main-color);
+  color: white;
+  border: 1px solid white;
+  border-left: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.subscribe .container form input[type="email"]:focus,
+.subscribe .container form input[type="submit"]:focus {
+  outline: none;
+}
+.subscribe .container p {
+  line-height: 2;
+  margin-left: 30px;
+}
+@media (max-width: 991px) {
+  .subscribe .container form {
+    width: 100%;
+  }
+  .subscribe .container p {
+    margin: 30px 0 0;
+    text-align: center;
+  }
+}
+/* END Subscribe  */
