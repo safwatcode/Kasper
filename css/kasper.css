@@ -1152,14 +1152,28 @@ header .container nav .search-icon i:hover {
   width: fit-content;
   margin: 20px auto;
 }
-.footer .social-icons i {
+.footer .social-icons a {
+  display: inline;
+  color: white;
   padding: 10px 15px;
+  transition: color var(--transition-duration-6ms);
+}
+.footer .social-icons a:hover {
+  color: var(--main-color);
 }
 .footer .copyright {
-  margin-top: 90px;
+  margin-top: 80px;
 }
-.footer .copyright span:not(#current-year) {
+.footer .copyright a {
+  display: inline;
   font-weight: bold;
   color: var(--main-color);
+}
+.footer .copyright:last-child i {
+  color: red;
+}
+.footer .copyright:last-child{
+  margin-top: 10px;
+  font-size: 10px;
 }
 /* END Footer  */
