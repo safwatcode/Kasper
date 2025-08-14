@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/test.css">
+
+</head>
+
+<body>
+  <div class="our-skills section">
+    <div class="container">
+      <div class="testimonials carousel">
+        <h3>Testimonials</h3>
+        <p>
+          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
+          tincidunt.
+        </p>
+        <div class="slides">
+          <div class="content slide active">
+            <div class="content-1">
+              <img decoding="async" src="images/skills-01.png" alt="" />
+              <div class="text">
+                Slide 1 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet
+                elit,
+                eget
+                tincidunt.
+                <p>John Doe, CEO</p>
+              </div>
+            </div>
+            <div class="content-2">
+              <img decoding="async" src="images/skills-02.png" alt="" />
+              <div class="text">
+                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet
+                elit,
+                eget
+                tincidunt.
+                <p>John Doe, CEO</p>
+              </div>
+            </div>
+          </div>
+          <div class="content slide">
+            <div class="content-1">
+              <img decoding="async" src="images/skills-03.png" alt="" />
+              <div class="text">
+                Slide 2 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet
+                elit,
+                eget
+                tincidunt.
+                <p>John Doe, CEO</p>
+              </div>
+            </div>
+            <div class="content-2">
+              <img decoding="async" src="images/skills-04.png" alt="" />
+              <div class="text">
+                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet
+                elit,
+                eget
+                tincidunt.
+                <p>John Doe, CEO</p>
+              </div>
+            </div>
+          </div>
+          <div class="content slide">
+            <div class="content-1">
+              <img decoding="async" src="images/skills-05.png" alt="" />
+              <div class="text">
+                Slide 3 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet
+                elit,
+                eget
+                tincidunt.
+                <p>John Doe, CEO</p>
+              </div>
+            </div>
+            <div class="content-2">
+              <img decoding="async" src="images/skills-06.png" alt="" />
+              <div class="text">
+                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet
+                elit,
+                eget
+                tincidunt.
+                <p>John Doe, CEO</p>
+              </div>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li class="bullet active" data-index="0"></li>
+            <li class="bullet" data-index="1"></li>
+            <li class="bullet" data-index="2"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="skills">
+        <h3>Skills</h3>
+        <p>
+          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
+          tincidunt.
+        </p>
+        <div class="prog-holder">
+          <h4>Adobe</h4>
+          <div class="prog">
+            <span style="width: 90%" data-progress="90%"></span>
+          </div>
+        </div>
+        <div class="prog-holder">
+          <h4>Html &amp; Css</h4>
+          <div class="prog">
+            <span style="width: 85%" data-progress="85%"></span>
+          </div>
+        </div>
+        <div class="prog-holder">
+          <h4>JavaScript</h4>
+          <div class="prog">
+            <span style="width: 80%" data-progress="80%"></span>
+          </div>
+        </div>
+        <div class="prog-holder">
+          <h4>Php</h4>
+          <div class="prog">
+            <span style="width: 90%" data-progress="90%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="kasper.js"></script> -->
+  <script>
+    // Testimonial Slider
+    const slides = document.querySelectorAll('.slide');
+    const bullets = document.querySelectorAll('.bullet');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      bullets.forEach((bullet, i) => {
+        bullet.classList.toggle('active', i === index);
+      });
+    }
+
+    // Add click event listeners to bullets
+    bullets.forEach((bullet) =>
+      bullet.addEventListener('click', () => {
+        const index = parseInt(bullet.getAttribute('data-index'));
+        showSlide(index);
+      })
+    );
+
+    // Optional: Automatically cycle through slides every 3 seconds
+    // let currentSlide = 0;
+    // setInterval(() => {
+    //   currentSlide = (currentSlide + 1) % slides.length;
+    //   showSlide(currentSlide);
+    // }, 3000);
+  </script>
+</body>
+
+</html>

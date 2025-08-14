@@ -747,7 +747,26 @@ header .container nav .search-icon i:hover {
   text-align: center;
   margin-bottom: 60px;
 }
+/* Testimonials */
+.our-skills .testimonials {
+  position: relative;
+  overflow: hidden;
+}
+.our-skills .testimonials .slides {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
 .our-skills .testimonials .content {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.our-skills .testimonials .content.active {
+  display: flex;
+}
+.our-skills .testimonials .content > div {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
@@ -759,11 +778,11 @@ header .container nav .search-icon i:hover {
   margin-right: 50px;
 }
 @media (max-width: 767px) {
-  .our-skills .testimonials .content {
+  .our-skills .testimonials .content > div {
     flex-direction: column;
     text-align: center;
   }
-  .our-skills .testimonials .content img {
+  .our-skills .testimonials .content > div img {
     margin: 0 auto 20px;
   }
 }
@@ -797,11 +816,11 @@ header .container nav .search-icon i:hover {
   background-color: white;
   border: 1px solid var(--main-color);
   margin-right: 10px;
+  cursor: pointer;
 }
 .testimonials .bullets li.active {
   background-color: var(--main-color);
 }
-
 /* Skills */
 .our-skills .skills .prog-holder {
   margin-bottom: 40px;
@@ -1172,7 +1191,7 @@ header .container nav .search-icon i:hover {
 .footer .copyright:last-child i {
   color: red;
 }
-.footer .copyright:last-child{
+.footer .copyright:last-child {
   margin-top: 10px;
   font-size: 10px;
 }

@@ -1,86 +1,113 @@
-// Slider
+// // Slider
 
-// Automatically update current year in footer
+// // Automatically update current year in footer
 let year = new Date();
 let currentYear = year.getFullYear();
 document.getElementById("current-year").innerHTML = currentYear;
 
-// Count-Up Animation
-const counters = document.querySelectorAll(".stat-number");
-let hasAnimated = false;
+// // Count-Up Animation
+// const counters = document.querySelectorAll(".stat-number");
+// let hasAnimated = false;
 
-window.addEventListener("scroll", () => {
-  const statsSection = document.querySelector(".stats");
-  if (!statsSection || hasAnimated) return;
+// window.addEventListener("scroll", () => {
+//   const statsSection = document.querySelector(".stats");
+//   if (!statsSection || hasAnimated) return;
 
-  const sectionTop = statsSection.getBoundingClientRect().top;
-  const windowHeight = window.innerHeight;
+//   const sectionTop = statsSection.getBoundingClientRect().top;
+//   const windowHeight = window.innerHeight;
 
-  if (sectionTop < windowHeight * 0.5) {
-    hasAnimated = true;
-    counters.forEach((counter) => {
-      counter.innerText = "0";
-      const updateCounter = () => {
-        const target = +counter.getAttribute("data-target");
-        const current = +counter.innerText;
-        const increment = target / 200;
-        if (current < target) {
-          counter.innerText = `${Math.ceil(current + increment)}`;
-          setTimeout(updateCounter, 10);
-        } else {
-          counter.innerText = target;
-        }
-      };
-      updateCounter();
-    });
-  }
-});
+//   if (sectionTop < windowHeight * 0.5) {
+//     hasAnimated = true;
+//     counters.forEach((counter) => {
+//       counter.innerText = "0";
+//       const updateCounter = () => {
+//         const target = +counter.getAttribute("data-target");
+//         const current = +counter.innerText;
+//         const increment = target / 200;
+//         if (current < target) {
+//           counter.innerText = `${Math.ceil(current + increment)}`;
+//           setTimeout(updateCounter, 10);
+//         } else {
+//           counter.innerText = target;
+//         }
+//       };
+//       updateCounter();
+//     });
+//   }
+// });
 
-// Another way using Observer
-/*
-const statsSection = document.querySelector(".stats");
-if (statsSection) {
-    const counters = document.querySelectorAll(".stat-number");
-    const animationDuration = 2000; // Animation duration in milliseconds (e.g., 2 seconds)
+// // Another way using Observer
+// /*
+// const statsSection = document.querySelector(".stats");
+// if (statsSection) {
+//     const counters = document.querySelectorAll(".stat-number");
+//     const animationDuration = 2000; // Animation duration in milliseconds (e.g., 2 seconds)
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        const entry = entries[0];
-        if (!entry.isIntersecting) return;
+//     const observer = new IntersectionObserver((entries, observer) => {
+//         const entry = entries[0];
+//         if (!entry.isIntersecting) return;
 
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            let startTime = null;
+//         counters.forEach(counter => {
+//             const target = +counter.getAttribute('data-target');
+//             let startTime = null;
 
-            const updateCounter = (timestamp) => {
-                if (!startTime) {
-                    startTime = timestamp;
-                }
+//             const updateCounter = (timestamp) => {
+//                 if (!startTime) {
+//                     startTime = timestamp;
+//                 }
 
-                const elapsedTime = timestamp - startTime;
-                const progress = Math.min(elapsedTime / animationDuration, 1);
-                const currentValue = Math.floor(progress * target);
+//                 const elapsedTime = timestamp - startTime;
+//                 const progress = Math.min(elapsedTime / animationDuration, 1);
+//                 const currentValue = Math.floor(progress * target);
 
-                counter.innerText = currentValue;
+//                 counter.innerText = currentValue;
 
-                if (elapsedTime < animationDuration) {
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    // Ensure the final target value is set precisely
-                    counter.innerText = target;
-                }
-            };
+//                 if (elapsedTime < animationDuration) {
+//                     requestAnimationFrame(updateCounter);
+//                 } else {
+//                     // Ensure the final target value is set precisely
+//                     counter.innerText = target;
+//                 }
+//             };
 
-            requestAnimationFrame(updateCounter);
-        });
+//             requestAnimationFrame(updateCounter);
+//         });
 
-        // Disconnect the observer after the animation has been triggered to save resources.
-        observer.disconnect();
-    }, {
-        // Start the animation when 50% of the stats section is visible.
-        threshold: 0.5
-    });
+//         // Disconnect the observer after the animation has been triggered to save resources.
+//         observer.disconnect();
+//     }, {
+//         // Start the animation when 50% of the stats section is visible.
+//         threshold: 0.5
+//     });
 
-    // Start observing the stats section.
-    observer.observe(statsSection);
+//     // Start observing the stats section.
+//     observer.observe(statsSection);
+// }
+// */
+
+// Testimonial Slider
+const slides = document.querySelectorAll(".slide");
+const bullets = document.querySelectorAll(".bullet");
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+  bullets.forEach((bullet, i) =>
+    bullet.classList.toggle("active", i === index)
+  );
 }
-*/
+
+bullets.forEach((bullet) =>
+  bullet.addEventListener("click", () => {
+    const index = parseInt(bullet.getAttribute("data-index"));
+    showSlide(index);
+  })
+);
+
+// Optional: Automatically cycle through slides every 3 seconds
+// let currentSlide = 0;
+// setInterval(() => {
+//   currentSlide = (currentSlide + 1) % slides.length;
+//   showSlide(currentSlide);
+// }, 3000);
