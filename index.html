@@ -39,6 +39,8 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="search-icon form">
+                    <input type="text" class="search-input" placeholder="Search sections...">
+                    <div class="search-suggestions"></div>
                     <i class="fas fa-search"></i>
                 </div>
             </nav>
@@ -51,6 +53,7 @@
         <!-- Overlay -->
         <div class="overlay"></div>
         <!-- END Overlay -->
+        <!-- Callback background if the js did not work -->
         <div class="landing-container">
             <div class="landing-content">
                 <h2>Hello World!
@@ -59,10 +62,7 @@
                 </h2>
                 <p>
                     Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
-                    tincidunt
-                    nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit
-                    aliquet
-                    elit, eget tincidunt.
+                    tincidunt nibh pulvinar a.
                 </p>
             </div>
         </div>
@@ -181,56 +181,56 @@
             <li>Print</li>
         </ul>
         <div class="gallary">
-            <div class="gallary-box">
+            <div class="gallary-box" data-category="Photography">
                 <img src="images/shuffle-01.jpg" alt="">
-                <div class="box-caption ">
+                <div class="box-caption">
                     <h4>Awesome photo</h4>
                     <p class="photo-dept">Photo</p>
                 </div>
             </div>
-            <div class="gallary-box">
+            <div class="gallary-box" data-category="Photography">
                 <img src="images/shuffle-02.jpg" alt="">
-                <div class="box-caption ">
+                <div class="box-caption">
                     <h4>Awesome photo</h4>
                     <p class="photo-dept">Photo</p>
                 </div>
             </div>
-            <div class="gallary-box">
+            <div class="gallary-box" data-category="App">
                 <img src="images/shuffle-03.jpg" alt="">
-                <div class="box-caption ">
+                <div class="box-caption">
                     <h4>Awesome photo</h4>
                     <p class="photo-dept">App</p>
                 </div>
             </div>
-            <div class="gallary-box">
+            <div class="gallary-box" data-category="App">
                 <img src="images/shuffle-04.jpg" alt="">
                 <div class="box-caption ">
                     <h4>Awesome photo</h4>
                     <p class="photo-dept">App</p>
                 </div>
             </div>
-            <div class="gallary-box">
+            <div class="gallary-box" data-category="Web">
                 <img src="images/shuffle-05.jpg" alt="">
                 <div class="box-caption ">
                     <h4>Awesome photo</h4>
                     <p class="photo-dept">Web</p>
                 </div>
             </div>
-            <div class="gallary-box">
+            <div class="gallary-box" data-category="Web">
                 <img src="images/shuffle-06.jpg" alt="">
                 <div class="box-caption ">
                     <h4>Awesome photo</h4>
                     <p class="photo-dept">Web</p>
                 </div>
             </div>
-            <div class="gallary-box">
+            <div class="gallary-box" data-category="Print">
                 <img src="images/shuffle-07.jpg" alt="">
                 <div class="box-caption ">
                     <h4>Awesome photo</h4>
                     <p class="photo-dept">Print</p>
                 </div>
             </div>
-            <div class="gallary-box">
+            <div class="gallary-box" data-category="Print">
                 <img src="images/shuffle-08.jpg" alt="">
                 <div class="box-caption ">
                     <h4>Awesome photo</h4>
@@ -301,7 +301,7 @@
     <!-- =============== Testimonials and Skills =============== -->
     <div class="our-skills section">
         <div class="container">
-            <div class="testimonials carousel">
+            <div class="testimonials">
                 <h3>Testimonials</h3>
                 <p>
                     Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
@@ -317,7 +317,7 @@
                                 elit,
                                 eget
                                 tincidunt.
-                                <p>John Doe, CEO</p>
+                                <p>John Doe 1, CEO</p>
                             </div>
                         </div>
                         <div class="content-2">
@@ -327,7 +327,7 @@
                                 elit,
                                 eget
                                 tincidunt.
-                                <p>John Doe, CEO</p>
+                                <p>John Doe 2, CEO</p>
                             </div>
                         </div>
                     </div>
@@ -340,7 +340,7 @@
                                 elit,
                                 eget
                                 tincidunt.
-                                <p>John Doe, CEO</p>
+                                <p>John Doe 3, CEO</p>
                             </div>
                         </div>
                         <div class="content-2">
@@ -350,7 +350,7 @@
                                 elit,
                                 eget
                                 tincidunt.
-                                <p>John Doe, CEO</p>
+                                <p>John Doe 4, CEO</p>
                             </div>
                         </div>
                     </div>
@@ -363,7 +363,7 @@
                                 elit,
                                 eget
                                 tincidunt.
-                                <p>John Doe, CEO</p>
+                                <p>John Doe 5, CEO</p>
                             </div>
                         </div>
                         <div class="content-2">
@@ -373,7 +373,7 @@
                                 elit,
                                 eget
                                 tincidunt.
-                                <p>John Doe, CEO</p>
+                                <p>John Doe 6, CEO</p>
                             </div>
                         </div>
                     </div>
@@ -541,9 +541,10 @@
             </div>
             <div class="content">
                 <form action="">
-                    <input class="main-input" type="text" name="name" placeholder="Your Name">
-                    <input class="main-input" type="email" name="email" placeholder="Your Mail">
-                    <textarea class="main-input" name="message" id="message" placeholder="Your Message"></textarea>
+                    <input class="main-input" type="text" name="name" placeholder="Your Name" required>
+                    <input class="main-input" type="email" name="email" placeholder="Your Mail" required>
+                    <textarea class="main-input" name="message" id="message" placeholder="Your Message"
+                        required></textarea>
                     <input type="submit" value="SEND MESSAGE">
                 </form>
                 <div class="contact-info">
@@ -582,15 +583,6 @@
         </div>
     </div>
     <!-- =============== END Footer =============== -->
-
-
-
-
-
-
-
-
-
 
     <!-- =============== JS =============== -->
     <script src="kasper.js"></script>
