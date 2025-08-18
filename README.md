@@ -2,7 +2,7 @@
 
 Kasper is a responsive, single-page creative agency website template built with HTML, CSS, and JavaScript. It is based on the "Kasper" PSD template design.
 
-**Live Demo:** [Link to your live site] (https://kasper-new.vercel.app/)
+**Live Demo:** https://kasper-new.vercel.app/
 
 ## Features
 
@@ -25,7 +25,7 @@ Kasper is a responsive, single-page creative agency website template built with 
 
 ## Getting Started
 
-To run this project locally, simply open the (https://kasper-new.vercel.app/) file in your web browser.
+To run this project, simply click on the link https://kasper-new.vercel.app/ to open in your web browser.
 
 
 ## Project Structure
@@ -45,4 +45,4 @@ To run this project locally, simply open the (https://kasper-new.vercel.app/) fi
 
 ## Credits
 
--   **Original Design:** This template is a coding implementation of the "Kasper - One Page Creative PSD Template" from (https://www.graphberry.com/item/kasper-one-page-psd-template).
+-   **Original Design:** This template is a coding implementation of the "Kasper - One Page Creative PSD Template" from https://www.graphberry.com/item/kasper-one-page-psd-template.
